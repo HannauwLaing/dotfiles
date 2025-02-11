@@ -1,0 +1,58 @@
+
+public static int[] BetterGetColor(int ColorNum) {
+    int maxcolval = 255;
+    int mincolval = 1;
+    int multiplier = 1;
+    int difcol = (maxcolval - mincolval);
+    int max = difcol * 6;
+    int testnum = (ColorNum * multiplier) % max;
+    
+    int hillwidth = (int)((float)max/22*8);
+    int offset = max/3;
+
+    int belR  = GetValAH(testnum, offset*0, hillwidth) + 0*GetValAH(testnum, offset*6 , hillwidth);
+    int belG  = GetValAH(testnum, offset*1, hillwidth);
+    int belB  = GetValAH(testnum, offset*2, hillwidth);
+    
+    belR += GetValAH(testnum, offset*3 , hillwidth);
+    belG += GetValAH(testnum, offset*4 , hillwidth);
+    belB += GetValAH(testnum, offset*5 , hillwidth);
+    
+    
+    belR = belR < 1 ? 1 : belR/2 +mincolval +0;
+    belG = belG < 1 ? 1 : belG/2 +mincolval +0;
+    belB = belB < 1 ? 1 : belB/2 +mincolval +0;
+
+    belR = belR > mincolval ? (belR < 254 ? belR : maxcolval)  : mincolval;
+    belG = belG > mincolval ? (belG < 254 ? belG : maxcolval)  : mincolval;
+    belB = belB > mincolval ? (belB < 254 ? belB : maxcolval)  : mincolval;
+    //System.out.println("test3:"+max+":\t"+belR+"\t"+belG+"\t"+belB+"\t");
+    //belB = 0;
+    //belG = 0;
+  
+    int[] newcol = {belR, belG, belB};
+    return newcol;
+  }
+// GetValueAroundHill
+  public static int GetValAH(int num, int hill, int width) {
+    if (num < hill) {
+      //uphill
+      if (num - hill + width < 0) {
+        //System.out.print("test2:"+num+":\t"+(hill-width)+"\t");
+        return 1;
+      } else {
+        
+        return num - hill + width;
+      }
+    } else {
+      //downhill
+      if (hill - num + width < 0) {
+        return 1;
+      } else {
+        //if (true) {return 1;}
+        return (hill - num + width);
+      }
+    }
+
+  }
+}
