@@ -1,0 +1,26 @@
+pane	Concurrancy	1	1	:*	1	HannauwLaptop	:/home/hannauw	1	zsh	:
+pane	General	1	0	:-	1	HannauwLaptop	:/home/hannauw	1	zsh	:
+pane	General	2	1	:*	1	HannauwLaptop	:/home/hannauw	1	nvim	:nvim /home/hannauw/Onstartup/helpcodes.sh
+pane	General	2	1	:*	2	HannauwLaptop	:/home/hannauw	0	zsh	:
+pane	General	3	0	:	1	HannauwLaptop	:/home/hannauw	1	zsh	:
+pane	Networks	1	0	:Z	1	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 313 Networking/group_11	1	make	:make run-server
+pane	Networks	1	0	:Z	2	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 313 Networking/group_11	0	make	:make run-client ARGS=localhost 3030
+pane	Networks	1	0	:Z	3	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 313 Networking/group_11	0	make	:make run-client ARGS=localhost 3030
+pane	Networks	2	0	:-Z	1	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 313 Networking/group_11/src	1	nvim	:nvim client/NetworkManager.java
+pane	Networks	2	0	:-Z	2	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 313 Networking/group_11	0	zsh	:
+pane	Networks	2	0	:-Z	3	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 313 Networking/group_11/src	0	zsh	:
+pane	Networks	3	1	:*	1	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 313 Networking/group_11/src	0	nvim	:nvim server/ChatRoom.java
+pane	Networks	3	1	:*	2	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 313 Networking/group_11/src	1	zsh	:
+pane	Networks	4	0	:	1	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 313 Networking/group_11/src	1	nvim	:nvim shared/messages/JoinedChat.java
+pane	Networks	5	0	:Z	1	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 313 Networking/group_11	0	nvim	:nvim /home/hannauw/Onstartup/helpcodes.sh
+pane	Networks	5	0	:Z	2	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 313 Networking/group_11	1	nvim	:nvim /home/hannauw/TemporaryFolder/t.java
+window	Concurrancy	1	:adpnczxl	1	:*	b8ff,128x33,0,0,2	off
+window	General	1	:zsh	0	:-	b900,128x33,0,0,3	:
+window	General	2	:t2	1	:*	4b0e,128x33,0,0{64x33,0,0,4,63x33,65,0,5}	off
+window	General	3	:Test1	0	:	b903,128x33,0,0,6	off
+window	Networks	1	:Runners	0	:Z	f37b,128x33,0,0{63x33,0,0,7,64x33,64,0[64x16,64,0,8,64x16,64,17,9]}	off
+window	Networks	2	:Client	0	:-Z	33d3,128x33,0,0{64x33,0,0,10,63x33,65,0[63x16,65,0,11,63x16,65,17,12]}	off
+window	Networks	3	:Server	1	:*	b711,128x33,0,0{64x33,0,0,13,63x33,65,0,14}	off
+window	Networks	4	:Shared	0	:	5cb4,128x33,0,0,15	off
+window	Networks	5	:Other	0	:Z	371c,128x33,0,0{64x33,0,0,17,63x33,65,0,19}	off
+state	Networks	

@@ -1,8 +1,21 @@
-# If you come from bash you might have to change your $PATH.
+export DOT_FOLDER_DIR=$HOME/dotfiles
+if [ -z "$DOT_FOLDER_DIR" ]; then
+  script_dir="$(dirname "$0")"
+  if [ -f "$script_dir/.bashrc" ]; then
+    # Read the first line from .bashrc into a variable
+    read -r first_line < "$script_dir/.bashrc"
+    # Execute the command from the first line
+    eval "$first_line"
+  else
+    echo ".bashrc file not found in $script_dir"
+  fi
+fi
+
+# If you come kkfrom bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$DOT_FOLDER_DIR/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -10,88 +23,21 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="Hannauwstheme"
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-
-# Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux)
-
-# ZSH_TMUX_AUTOSTART="true";
-
-
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+#echo 2
+#tmux ls -F "#{session_name}" | while read i; do
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+#echo $i
+#re='^[0-9]'
+#if [[ $i  =~ $re ]]; then
+#	echo "Test1"
+#       	tmux 
+	#~/.tmux/plugins/tmux-resurrect/scripts/restore.sh
+	#tmux kill-session -t (tmux list-sessions | sed -n '/(attached)/s/:.*//p')
+	
+#fi
+#done
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -99,36 +45,59 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias example="(){ echo Your arg was $1. ;}"
-alias pj="cd ;cd ~/StelenboshYear2/Compsci244/Project/;"
-alias tu="cd ;cd ~/StelenboshYear2/Compsci244/CS244Tuts/;"
-alias pushgit="./push.sh"  
-alias autogit="git add . ;git commit -m '$1'; git push;"
-alias e="while true; do exit; done;"
-alias cbg="cd; ./Onstartup/backgrounds/change-background.sh"
-alias openproj="pj ; code src/;"
-alias opentut="cd ;tu ;code Tutorial'$1'/tut'$1'.java;"
-alias codepj="pj ;code ./;"
-alias runallpjtests="pj; ./runalltests.sh"
-alias c="clear"
-alias zconfig="cd; nvim .zshrc"
 
-alias hconfig="nvim ~/Onstartup/helpcodes.sh"
-alias oneko="oneko 0<&- >/dev/null 2>&1 & disown ;"
-alias killcat="pkill oneko"
+alias zconfig="nvim $DOT_FOLDER_DIR/.zshrc"
+alias hconfig="nvim $DOT_FOLDER_DIR/helpcodes.sh"
+alias tconfig="nvim $DOT_FOLDER_DIR/.tmux.conf"
+# alias pj="cd ;cd ~/StelenboshYear2/Compsci244/Project/;"
+# alias tu="cd ;cd ~/StelenboshYear2/Compsci244/CS244Tuts/;"
+alias pushgit="ga .; gc -m \"Commit all\"; gp"
+alias autogit="git add . ;git commit -m '$1'; git push;"
+alias e="exit;"
+alias eall="tmux kill-server"
+
+alias c="clear"
+
+alias oneko="$DOT_FOLDER_DIR/oneko 0<&- >/dev/null 2>&1 & disown ;"
+alias killcat="pkill oneko;c; echo \"Cats have been purged\""
 alias kc="killcat"
 alias endlesskat="while true; do oneko; sleep 1; done;"
-alias help="~/Onstartup/helpcodes.sh"
-alias h="help"
+alias help="$DOT_FOLDER_DIR/helpcodes.sh"
+alias h="$DOT_FOLDER_DIR/helpcodes.sh"
 alias reload="source ~/.zshrc;c;"
 alias r="reload;"
 alias funcode="cd ~/Onstartup/FunCode/;java FunWallPaper;cd;"
+alias cmatrix="$DOT_FOLDER_DIR/cmatrix"
 alias hackerman="cmatrix -b"
 
 alias killses="tmux kill-session"
 
-alias openNarga="ssh -J 27086534@hermes.cs.sun.ac.za 27086534@open.rga.stb.sun.ac.za"
+alias openNarga="ssh 27086534@open.rga.stb.sun.ac.za"
 alias oN="openNarga"
 
 alias gst="git fetch; git status;"
+alias specs="neofetch"
+
+alias ga="git add"
+alias gc="git commit"
+alias gp="git push"
+
+# My own costomizations:
+
+alias cbg="~/Onstartup/backgrounds/change-background.sh"
+
+
+
+
+
+# Some testing from ChadGPT
+
+_h_completion() {
+  local -a args
+  args=("arg1" "arg2" "arg3")  # Define the allowed arguments
+  _arguments '1:argument:(${args[@]})'
+}
+
+# Apply completion to both the script and alias
+compdef _h_completion h=~/Onstartup/helpcodes.sh
 
