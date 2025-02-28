@@ -1,15 +1,4 @@
 export DOT_FOLDER_DIR=$HOME/dotfiles
-if [ -z "$DOT_FOLDER_DIR" ]; then
-  script_dir="$(dirname "$0")"
-  if [ -f "$script_dir/.bashrc" ]; then
-    # Read the first line from .bashrc into a variable
-    read -r first_line < "$script_dir/.bashrc"
-    # Execute the command from the first line
-    eval "$first_line"
-  else
-    echo ".bashrc file not found in $script_dir"
-  fi
-fi
 
 # If you come kkfrom bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
