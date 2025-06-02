@@ -17,19 +17,22 @@ BOLD_CYAN='\033[1;36m'
 BOLD_WHITE='\033[1;37m'
 
 basichelp() {
-echo "~~~~~~~~~~~Basic help~~~~~~~~"
-clear
-echo "exit		e	: exit"
-echo "clear		c	: clear"
-echo "help		h	: help"
-echo "hconfig			: edit help file"
-echo "htop			: Advanced Task manager"
-echo "specs			: See Computer specs"
+echo "$BOLD_GREEN ~~~~~~~~~~Basic help~~~~~~~~$NC"
+echo "$CYAN exit		e	$NC : close terminal"
+echo "$CYAN eall			$NC : exit tmux"
+echo "$CYAN clear		c	$NC : clear"
+echo "$CYAN help		h	$NC : help"
+echo "$CYAN zconfig		$NC : edit zsh config file"
+echo "$CYAN hconfig		$NC : edit help config file"
+echo "$CYAN tconfig		$NC : edit tmux config file"
+echo "$CYAN nconfig		$NC : edit neovim config file"
+echo "$CYAN htop			$NC : Advanced Task manager"
+echo "$CYAN specs			$NC : See Computer specs"
 echo ""
-echo "~~~Exra help~"
-echo "terminal		: terminal"
-echo "vim/nvim		: vim"
-echo "tmux			: tmux"
+echo "$BOLD_GREEN\t~~~Exra help~~~"
+echo "$CYAN terminal		$NC : terminal help"
+echo "$CYAN vim/nvim		$NC : vim help"
+echo "$CYAN tmux			$NC : tmux help"
 }
 
 echo "$CYAN			$NC "
@@ -77,6 +80,14 @@ echo "$CYAN man <command>			$NC displays manual for <command>"
 
 vimhelp() {
     echo "\n$BOLD_GREEN~~~~~~~~~~~~~ Vim help ~~~~~~~~~~~~~$NC\n"
+    echo "\n$GREEN*** Normal mode ***$NC\n"
+    echo "$CYAN <space> o	           $NC|Opens NeoClip registers in telescope"
+    echo "$CYAN	NeoClip: <Enter>   $NC|Adds selected entry to current register"
+    echo "$CYAN	         <Ctrl + k>$NC|Pastes selected entry before cursor"
+    
+    echo "\n$GREEN*** InsertMode ***$NC\n"
+    echo "$CYAN <C>r = <calculation>	$NC|Prints solution to math equation"
+
     echo "\n$GREEN*** Editing ***$NC\n"
     echo "$CYAN r$NC			|Replace singel character"
     echo "$CYAN R$NC			|Enter Replace mode"
@@ -94,14 +105,16 @@ vimhelp() {
     echo "\n$GREEN*** Visual mode ***$NC\n"
     echo "$CYAN v$NC			|Enter visual mode"
     echo "$CYAN V$NC			|Enter Visual-Line mode"
-    echo "$CYAN <cntr>v$NC		|Enter Visual-Block mode"
+    echo "$CYAN <C>v$NC			|Enter Visual-Block mode"
     echo "$CYAN u$NC			|Change to Lower case"
     echo "$CYAN U$NC			|Change to Upper case"
     echo "$CYAN ~$NC			|Toggle to case"
+    echo "$CYAN gc$NC			|Toggle Comments on highlighted lines"
+
 
     echo "\n$GREEN*** Movement ***$NC\n"
     echo "$CYAN hjkl$NC			|Left, Up, Down, Right$NC"
-    echo "$CYAN<Ctrl> + hjkl$NC		|Move Screen Left, Up, Down, Right$NC"
+    echo "$CYAN<C> + hjkl$NC		|Move Screen Left, Up, Down, Right$NC"
     echo "$CYAN<num>gg$NC			|Go to line <number>$NC"
     echo "$CYAN 0 $NC/$CYAN $ $NC			|Start/End of line$NC"
     echo "$CYAN^$NC			|First Non-blank character of line$NC"
@@ -119,41 +132,47 @@ vimhelp() {
     echo "$CYAN:delm <key>$NC		|Deletes mark <key>$NC"
     #echo ""
 
+
 }
 
 tmuxhelp() {
 clear
-echo "~~~~~~~~~~~tmux help~~~~~~~~"
-echo "Prefix(Prfx):		Cntr-a"
-echo "Save setup		Prfx + Cntr-s"
-echo "Relaod setup		Prfx + Cntr-r"
-echo "Close session		Prfx:q"
-echo ""
-echo "Split Horisontal	Prfx + | "
-echo "Split Vertical		Prfx + - "
-echo "Move between Splits	Prfx + <h,j,k,l>"
-echo "Full screen split		Prfx + z"
-echo ""
-echo "New Session		Prfx + :new-session"
-echo "Rename Session		Prfx + $"
-echo "Go To session		Prfx + w"
-echo ""
-echo "New window		Prfx + c"
-echo "Rename window		Prfx + ,"
-echo "GoTo window		Prfx + <Num>"
+echo "\n$GREEN*** Startup and Reload ***$NC\n"
+echo "$CYAN Prefix (Prfx): $NC            Cntr-a                          $NC"
+echo "$CYAN Prfx + Cntr-s $NC             Save setup                      $NC"
+echo "$CYAN Prfx + Cntr-r $NC             Reload setup                    $NC"
+
+echo "\n$GREEN*** Movement ***$NC\n"
+echo "$CYAN Prfx + | $NC                  Split Horizontal                $NC"
+echo "$CYAN Prfx + - $NC                  Split Vertical                  $NC"
+echo "$CYAN Prfx + <h,j,k,l> $NC          Move between splits             $NC"
+echo "$CYAN Prfx + z $NC                  Full screen split               $NC"
+
+echo "\n$GREEN*** Sessions ***$NC\n"
+echo "$CYAN Prfx + v $NC                  New Session                     $NC"
+echo "$CYAN Prfx + \$ $NC                  Rename Session                  $NC"
+echo "$CYAN Prfx + e $NC                  Show all Sessions               $NC"
+
+echo "\n$GREEN*** Windows ***$NC\n"
+echo "$CYAN Prfx + c $NC                  New Window                      $NC"
+echo "$CYAN Prfx + , $NC                  Rename Window                   $NC"
+echo "$CYAN Prfx + w $NC                  Show all Windows                $NC"
+echo "$CYAN Prfx + <Num> $NC              Go to Window                    $NC"
 
 }
 
 
 i=1;
 if [ "$#" -eq 0 ]; then
-	echo "test1"
-	basichelp	
+	basichelp 	
 fi
 
 
 for a in "$@"
 do
+	if [ "$a" = "nvim" ]; then
+		vimhelp | less
+	fi
 	if [ "$a" = "vim" ]; then
 		vimhelp | less
 	fi

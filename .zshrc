@@ -14,19 +14,17 @@ ZSH_THEME="Hannauwstheme"
 
 source $ZSH/oh-my-zsh.sh
 
-#echo 2
-#tmux ls -F "#{session_name}" | while read i; do
+zstyle ':omz:update' mode auto
 
-#echo $i
-#re='^[0-9]'
-#if [[ $i  =~ $re ]]; then
-#	echo "Test1"
-#       	tmux 
-	#~/.tmux/plugins/tmux-resurrect/scripts/restore.sh
-	#tmux kill-session -t (tmux list-sessions | sed -n '/(attached)/s/:.*//p')
-	
-#fi
-#done
+# # Auto attach to last tmux session if it exists
+# if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+#   if tmux has-session 2>/dev/null; then
+#     tmux attach-session
+#     exit
+#   fi
+# fi
+#
+#
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -38,19 +36,27 @@ source $ZSH/oh-my-zsh.sh
 alias zconfig="nvim $DOT_FOLDER_DIR/.zshrc"
 alias hconfig="nvim $DOT_FOLDER_DIR/helpcodes.sh"
 alias tconfig="nvim $DOT_FOLDER_DIR/.tmux.conf"
+alias nconfig="nvim $DOT_FOLDER_DIR/.nvim_dotfiles/init.lua"
 # alias pj="cd ;cd ~/StelenboshYear2/Compsci244/Project/;"
 # alias tu="cd ;cd ~/StelenboshYear2/Compsci244/CS244Tuts/;"
 alias pushgit="ga .; gc -m \"Commit all\"; gp"
 alias autogit="git add . ;git commit -m '$1'; git push;"
 alias e="exit;"
-alias eall="tmux kill-server"
+alias eall="tmux kill-server; e"
 
 alias c="clear"
 
-alias oneko="$DOT_FOLDER_DIR/oneko 0<&- >/dev/null 2>&1 & disown ;"
-alias killcat="pkill oneko;c; echo \"Cats have been purged\""
+# alias oneko="$DOT_FOLDER_DIR/oneko 0<&- >/dev/null 2>&1 & disown ;"
+alias oneko="make -C ~/FunCodes/oneko/ all 0<&- >/dev/null 2>&1 & disown ;"
+
+# alias killcat="pkill java_neko;c; echo \"Cats have been purged\""
+alias killcat="pkill -f \"^java -cp bin NekoMain$\";c; echo \"Cats have been purged\""
 alias kc="killcat"
-alias endlesskat="while true; do oneko; sleep 1; done;"
+alias kcc="kc;c"
+alias endlesskat="while true; do oneko; sleep 0.5; done;"
+alias manykats="for i in {1..45}; do oneko; sleep 2; done;"
+
+
 alias help="$DOT_FOLDER_DIR/helpcodes.sh"
 alias h="$DOT_FOLDER_DIR/helpcodes.sh"
 alias reload="source ~/.zshrc;c;"
@@ -76,6 +82,7 @@ alias gp="git push"
 alias cbg="~/Onstartup/backgrounds/change-background.sh"
 
 
+bindkey \^K kill-line
 
 
 
@@ -90,3 +97,16 @@ _h_completion() {
 # Apply completion to both the script and alias
 compdef _h_completion h=~/Onstartup/helpcodes.sh
 
+
+
+
+
+function rejbg() {
+  # get the current picture-uri-dark (in single quotes), remove 'file://' and surrounding quotes
+  local cur
+  cur=$(gsettings get org.gnome.desktop.background picture-uri-dark \
+        | sed -e "s/^'file:\/\///" -e "s/'$//")
+  # move it into your “Rejected backgrounds” directory
+  mv "$cur" "$HOME/Onstartup/backgrounds/Rejected wallpapers/"
+  cbg
+}

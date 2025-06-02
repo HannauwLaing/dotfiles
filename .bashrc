@@ -6,6 +6,6 @@ ln -s $DOT_FOLDER_DIR/.tmux $HOME/
 ln -s $DOT_FOLDER_DIR/.tmux.conf $HOME/
 
 ln -s $DOT_FOLDER_DIR/nvim $HOME/.config/
-$DOT_FOLDER_DIR/zsh
-exit
+# $DOT_FOLDER_DIR/zsh
+# exit
 
