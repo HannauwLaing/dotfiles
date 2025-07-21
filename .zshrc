@@ -27,11 +27,15 @@ zstyle ':omz:update' mode auto
 # Example aliases
 
 alias zconfig="nvim $DOT_FOLDER_DIR/.zshrc"
-alias hconfig="nvim $DOT_FOLDER_DIR/helpcodes.sh"
+alias hconfig="nvim $DOT_FOLDER_DIR/.source_files/helpcodes.sh"
 alias tconfig="nvim $DOT_FOLDER_DIR/.tmux.conf"
 alias nconfig="nvim $DOT_FOLDER_DIR/.nvim_dotfiles/init.lua"
 #open tmux with old session
 alias tx="if [[ -z $(tmux ls) ]]; then tmux; else tmux a; fi"
+alias help="$DOT_FOLDER_DIR/.source_files/helpcodes.sh"
+alias h="help"
+alias reload="source ~/.zshrc;c;"
+alias r="reload;"
 # alias pj="cd ;cd ~/StelenboshYear2/Compsci244/Project/;"
 # alias tu="cd ;cd ~/StelenboshYear2/Compsci244/CS244Tuts/;"
 alias pushgit="ga .; gc -m \"Commit all\"; gp"
@@ -52,10 +56,6 @@ alias endlesskat="while true; do oneko; sleep 0.5; done;"
 alias manykats="for i in {1..45}; do oneko; sleep 2; done;"
 
 
-alias help="$DOT_FOLDER_DIR/helpcodes.sh"
-alias h="$DOT_FOLDER_DIR/helpcodes.sh"
-alias reload="source ~/.zshrc;c;"
-alias r="reload;"
 alias funcode="cd ~/Onstartup/FunCode/;java FunWallPaper;cd;"
 alias cmatrix="$DOT_FOLDER_DIR/cmatrix"
 alias hackerman="cmatrix -b"
