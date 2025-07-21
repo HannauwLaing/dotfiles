@@ -16,14 +16,7 @@ source $ZSH/oh-my-zsh.sh
 
 zstyle ':omz:update' mode auto
 
-# # Auto attach to last tmux session if it exists
-# if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-#   if tmux has-session 2>/dev/null; then
-#     tmux attach-session
-#     exit
-#   fi
-# fi
-#
+
 #
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
@@ -37,6 +30,8 @@ alias zconfig="nvim $DOT_FOLDER_DIR/.zshrc"
 alias hconfig="nvim $DOT_FOLDER_DIR/helpcodes.sh"
 alias tconfig="nvim $DOT_FOLDER_DIR/.tmux.conf"
 alias nconfig="nvim $DOT_FOLDER_DIR/.nvim_dotfiles/init.lua"
+#open tmux with old session
+alias tx="if [[ -z $(tmux ls) ]]; then tmux; else tmux a; fi"
 # alias pj="cd ;cd ~/StelenboshYear2/Compsci244/Project/;"
 # alias tu="cd ;cd ~/StelenboshYear2/Compsci244/CS244Tuts/;"
 alias pushgit="ga .; gc -m \"Commit all\"; gp"
@@ -48,9 +43,9 @@ alias c="clear"
 
 # alias oneko="$DOT_FOLDER_DIR/oneko 0<&- >/dev/null 2>&1 & disown ;"
 alias oneko="make -C ~/FunCodes/oneko/ all 0<&- >/dev/null 2>&1 & disown ;"
-
+a
 # alias killcat="pkill java_neko;c; echo \"Cats have been purged\""
-alias killcat="pkill -f \"^java -cp bin NekoMain$\";c; echo \"Cats have been purged\""
+alias killcat="pkill -f \"^java -cp bin NekoMain$\";clear; echo \"Cats have been purged\""
 alias kc="killcat"
 alias kcc="kc;c"
 alias endlesskat="while true; do oneko; sleep 0.5; done;"
