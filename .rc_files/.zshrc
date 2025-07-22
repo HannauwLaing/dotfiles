@@ -26,9 +26,9 @@ zstyle ':omz:update' mode auto
 #
 # Example aliases
 
-alias zconfig="nvim $DOT_FOLDER_DIR/.zshrc"
+alias zconfig="nvim $DOT_FOLDER_DIR/.rc_files/.zshrc"
 alias hconfig="nvim $DOT_FOLDER_DIR/.source_files/helpcodes.sh"
-alias tconfig="nvim $DOT_FOLDER_DIR/.tmux.conf"
+alias tconfig="nvim $DOT_FOLDER_DIR/.rc_files/.tmux.conf"
 alias nconfig="nvim $DOT_FOLDER_DIR/.nvim_dotfiles/init.lua"
 #open tmux with old session
 alias tx="if [[ -z $(tmux ls) ]]; then tmux; else tmux a; fi"
@@ -41,7 +41,7 @@ alias r="reload;"
 alias pushgit="ga .; gc -m \"Commit all\"; gp"
 alias autogit="git add . ;git commit -m '$1'; git push;"
 alias e="exit;"
-alias eall="tmux kill-server; e"
+alias eall="tmux detach; e"
 
 alias c="clear"
 
@@ -79,18 +79,25 @@ alias cbg="~/Onstartup/backgrounds/change-background.sh"
 bindkey \^K kill-line
 
 
+tmux() {
+  if [ $# -eq 0 ]; then
+    command tmux attach || command tmux
+  else
+    command tmux "$@"
+  fi
+}
 
 # Some testing from ChadGPT
 
-_h_completion() {
-  local -a args
-  args=("arg1" "arg2" "arg3")  # Define the allowed arguments
-  _arguments '1:argument:(${args[@]})'
-}
-
-# Apply completion to both the script and alias
-compdef _h_completion h=~/Onstartup/helpcodes.sh
-
+# _h_completion() {
+#   local -a args
+#   args=("arg1" "arg2" "arg3")  # Define the allowed arguments
+#   _arguments '1:argument:(${args[@]})'
+# }
+#
+# # Apply completion to both the script and alias
+# compdef _h_completion h=~/Onstartup/helpcodes.sh
+#
 
 
 

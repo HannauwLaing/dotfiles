@@ -1,3 +1,6 @@
+[submodule "nvim"]
+	path = .nvim_config/nvim
+	url = https://github.com/HannauwLaing/kickstart.nvim
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
