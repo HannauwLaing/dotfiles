@@ -62,7 +62,18 @@ check_src_files
 link_files "$RC_SRC" "$RC_DST"
 
 
+
 TMUX_SRC="$REPO_DIR/.tmux"
 TMUX_DST="$HOME"
-backup "$TMUX_DST"
-link_files "$TMUX_SRC" "$TMUX_DST"
+get_tmux_plugins() {
+  grep -oE "@plugin +'[^']+'" $REPO_DIR/.rc_files/.tmux.conf \
+  | awk -F"'" '{print $2}' \
+  | while read repo; do
+      name=$(basename "$repo")
+      git clone "https://github.com/tmux-plugins/$repo.git" "$HOME/.tmux/plugins/$name"
+    done
+}
+mkdir "$TMUX_DST"
+get_tmux_plugins
+# backup "$TMUX_DST"
+# link_files "$TMUX_SRC" "$TMUX_DST"
