@@ -3,6 +3,8 @@ set -euo pipefail
 
 
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+REPO_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+
 
 git -C $REPO_DIR submodule update --init --recursive
 
@@ -73,7 +75,7 @@ get_tmux_plugins() {
       git clone "https://github.com/tmux-plugins/$repo.git" "$HOME/.tmux/plugins/$name"
     done
 }
-mkdir "$TMUX_DST"
+mkdir -p "$TMUX_DST"
 get_tmux_plugins
 # backup "$TMUX_DST"
 # link_files "$TMUX_SRC" "$TMUX_DST"
