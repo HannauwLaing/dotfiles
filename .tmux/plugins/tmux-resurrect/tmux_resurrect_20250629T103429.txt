@@ -1,0 +1,40 @@
+pane	9	1	1	:*	1	HannauwLaptop	:/home/hannauw	1	zsh	:
+pane	9	1	1	:*	2	HannauwLaptop	:/home/hannauw	0	zsh	:
+pane	Concurrancy	1	1	:*	1	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 314 Concurrency/27086534-rw314-projects/proj2	1	zsh	:
+pane	Concurrancy	1	1	:*	2	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 314 Concurrency/27086534-rw314-projects/proj2	0	nvim	:nvim /home/hannauw/dotfiles/.tmux.conf
+pane	Concurrancy	1	1	:*	3	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 314 Concurrency/27086534-rw314-projects/proj2	0	zsh	:
+pane	Concurrancy	2	0	:-	1	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 314 Concurrency/27086534-rw314-projects/proj2/my_player/src	1	zsh	:
+pane	Concurrancy	2	0	:-	2	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 314 Concurrency/27086534-rw314-projects/proj2/my_player	0	zsh	:
+pane	Concurrancy	3	0	:	1	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 314 Concurrency/27086534-rw314-tuts/tut9	0	zsh	:
+pane	Concurrancy	3	0	:	2	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 314 Concurrency/27086534-rw314-tuts/tut9	1	zsh	:
+pane	Concurrancy	4	0	:	1	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 314 Concurrency/27086534-rw314-tuts/tut9/mpi_sort_sctrv	0	zsh	:
+pane	Concurrancy	4	0	:	2	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 314 Concurrency/27086534-rw314-tuts/tut9/mpi_sort_sctrv	1	zsh	:
+pane	General	1	1	:*	1	HannauwLaptop	:/home/hannauw	1	htop	:htop
+pane	General	2	0	:-	1	HannauwLaptop	:/home/hannauw	0	nvim	:nvim FunCodes/GraphTyping.py
+pane	General	2	0	:-	2	HannauwLaptop	:/home/hannauw	1	zsh	:
+pane	General	3	0	:	1	HannauwLaptop	:/home/hannauw	1	zsh	:
+pane	Networks	1	1	:*	1	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 313 Networking/Proj4/group_11	1	zsh	:
+pane	Networks	1	1	:*	2	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 313 Networking/Proj4/group_11	0	zsh	:
+pane	Networks	1	1	:*	3	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 313 Networking/Proj4/group_11	0	zsh	:
+pane	Networks	2	0	:-	1	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 313 Networking/Proj4/group_11	1	nvim	:nvim src/client
+pane	Networks	3	0	:	1	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 313 Networking/Proj4/group_11	1	zsh	:
+pane	Networks	4	0	:	1	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 313 Networking/Proj4/group_11	1	zsh	:
+pane	Networks	5	0	:	1	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 313 Networking/Proj4/group_11	1	zsh	:
+pane	Networks	6	0	:	1	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 313 Networking/Proj4/group_11	1	zsh	:
+pane	Networks lectures/Tuts	1	1	:*	1	HannauwLaptop	:/home/hannauw/StelenboshYear3/CompSci\ 313 Networking	1	zsh	:
+window	9	1	:zsh	1	:*	e5d8,128x33,0,0{64x33,0,0,1,63x33,65,0,24}	:
+window	Concurrancy	1	:Project	1	:*	c1ea,128x33,0,0{65x33,0,0,2,62x33,66,0[62x16,66,0,3,62x16,66,17,4]}	off
+window	Concurrancy	2	:Proj code	0	:-	c132,128x33,0,0{63x33,0,0,5,64x33,64,0,6}	off
+window	Concurrancy	3	:zsh	0	:	bf0d,128x33,0,0[128x6,0,0,7,128x26,0,7,8]	:
+window	Concurrancy	4	:zsh	0	:	a0f6,128x33,0,0{63x33,0,0,9,64x33,64,0,10}	:
+window	General	1	:htop	1	:*	5cb0,128x33,0,0,11	:
+window	General	2	:t2	0	:-	e137,128x33,0,0[128x6,0,0,12,128x26,0,7,13]	off
+window	General	3	:Test1	0	:	5cb3,128x33,0,0,14	off
+window	Networks	1	:Runners	1	:*	622a,128x33,0,0{63x33,0,0,15,64x33,64,0[64x16,64,0,16,64x16,64,17,17]}	off
+window	Networks	2	:client	0	:-	5cb7,128x33,0,0,18	off
+window	Networks	3	:server	0	:	5cb8,128x33,0,0,19	off
+window	Networks	4	:shared	0	:	dcaf,128x33,0,0,20	off
+window	Networks	5	:Other	0	:	dcb0,128x33,0,0,21	off
+window	Networks	6	:zsh	0	:	dcb1,128x33,0,0,22	:
+window	Networks lectures/Tuts	1	:zsh	1	:*	dcb2,128x33,0,0,23	:
+state	9	Networks lectures/Tuts

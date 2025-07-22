@@ -41,7 +41,7 @@ alias r="reload;"
 alias pushgit="ga .; gc -m \"Commit all\"; gp"
 alias autogit="git add . ;git commit -m '$1'; git push;"
 alias e="exit;"
-alias eall="tmux detach; e"
+alias eall="tmux detach"
 
 alias c="clear"
 

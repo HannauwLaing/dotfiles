@@ -1,0 +1,29 @@
+pane	12	1	1	:*	1	HannauwLaptop	:/home/hannauw	1	zsh	:
+pane	13	1	1	:*	1	HannauwLaptop	:/home/hannauw	1	zsh	:
+pane	9	1	1	:*Z	1	HannauwLaptop	:/home/hannauw/FunCodes/oneko	0	zsh	:
+pane	9	1	1	:*Z	2	HannauwLaptop	:/home/hannauw/FunCodes/oneko	1	zsh	:
+pane	9	2	0	:	1	HannauwLaptop	:/home/hannauw/FunCodes/oneko	1	zsh	:
+pane	9	3	0	:-	1	HannauwLaptop	:/home/hannauw/FunCodes/oneko	1	zsh	:
+pane	Functional programing	1	1	:*	1	HannauwLaptop	:/home/hannauw	0	zsh	:
+pane	Functional programing	1	1	:*	2	HannauwLaptop	:/home/hannauw	1	zsh	:
+pane	Functional programing	2	0	:-	1	HannauwLaptop	:/home/hannauw	1	zsh	:
+pane	General	1	1	:*	1	HannauwLaptop	:/home/hannauw	1	htop	:htop
+pane	General	2	0	:-	1	HannauwLaptop	:/home/hannauw	0	nvim	:nvim FunCodes/GraphTyping.py
+pane	General	2	0	:-	2	HannauwLaptop	:/home/hannauw	1	zsh	:
+pane	General	3	0	:	1	HannauwLaptop	:/home/hannauw	1	zsh	:
+pane	WebDev	1	1	:*	1	HannauwLaptop	:/home/hannauw	1	zsh	:
+pane	WebDev	1	1	:*	2	HannauwLaptop	:/home/hannauw	0	zsh	:
+pane	WebDev	2	0	:-	1	HannauwLaptop	:/home/hannauw	1	zsh	:
+window	12	1	:zsh	1	:*	b8fe,128x33,0,0,1	:
+window	13	1	:zsh	1	:*	b8ff,128x33,0,0,2	:
+window	9	1	:zsh	1	:*Z	cb09,128x33,0,0{64x33,0,0,3,63x33,65,0,4}	:
+window	9	2	:config	0	:	5cb4,128x33,0,0,15	off
+window	9	3	:local	0	:-	5cb5,128x33,0,0,16	off
+window	Functional programing	1	:zsh	1	:*	cb12,128x33,0,0{64x33,0,0,5,63x33,65,0,6}	:
+window	Functional programing	2	:zsh	0	:-	b904,128x33,0,0,7	:
+window	General	1	:htop	1	:*	b905,128x33,0,0,8	:
+window	General	2	:t2	0	:-	9fcf,128x33,0,0[128x6,0,0,9,128x26,0,7,10]	off
+window	General	3	:Test1	0	:	5cb0,128x33,0,0,11	off
+window	WebDev	1	:zsh	1	:*	370f,128x33,0,0{64x33,0,0,12,63x33,65,0,13}	:
+window	WebDev	2	:zsh	0	:-	5cb3,128x33,0,0,14	:
+state	9	WebDev

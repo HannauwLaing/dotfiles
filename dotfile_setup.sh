@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-git clone --recurse-submodules https://github.com/HannauwLaing/dotfiles.git
 
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-cp ~/dotfiles/.source_files/Hannauwstheme.zsh-theme ~/dotfiles/.oh-my-zsh/custom/themes
+git -C $REPO_DIR submodule update --init --recursive
+
+# git clone --recurse-submodules https://github.com/HannauwLaing/dotfiles.git
+
+cp $REPO_DIR/.source_files/Hannauwstheme.zsh-theme $REPO_DIR/.oh-my-zsh/custom/themes
 
 backup() {
   local path="$1"
@@ -49,7 +52,7 @@ link_files "$NVIM_SRC" "$NVIM_DST"
 
 # .zshrc links to inside the dotfiles folder so not needed
 # OHZ_SRC="$REPO_DIR/.oh-my-zsh"
-# OHZ_DST="$HOME/.oh-my-zsh"
+# OHZ_DST="$HOME"
 # link_files "$OHZ_SRC" "$OHZ_DST"
 
 
@@ -57,3 +60,9 @@ RC_SRC="$REPO_DIR/.rc_files/.*"
 RC_DST="$HOME"
 check_src_files
 link_files "$RC_SRC" "$RC_DST"
+
+
+TMUX_SRC="$REPO_DIR/.tmux"
+TMUX_DST="$HOME"
+backup "$TMUX_DST"
+link_files "$TMUX_SRC" "$TMUX_DST"
