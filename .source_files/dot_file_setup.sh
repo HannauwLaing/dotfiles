@@ -3,6 +3,7 @@ set -euo pipefail
 
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
+cp .source_files/Hannauwstheme.zsh-theme .oh-my-zsh/custom/themes
 
 backup() {
   local path="$1"
