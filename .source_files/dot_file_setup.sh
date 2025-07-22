@@ -19,6 +19,20 @@ backup() {
   mv "$path" "$path.bak.$(date +%s)"
   mkdir -p "$(dirname "$2")"
 }
+check_src_files() {
+# This is done manually cause I cant be bothereda
+
+  files=( "$HOME/.bashrc" "$HOME/.zshrc" "$HOME/.tmux.conf" )
+
+  for f in "${files[@]}"; do
+    if [ -e "$f" ] || [ -L "$f" ]; then   # catches broken symlinks too
+      rm -f "$f"
+      echo "Removed $f"
+    else
+      echo "Missing $f (skip)"
+    fi
+  done 
+}
 
 link_files() {
 	echo "Linked $1 to $2"
@@ -39,5 +53,5 @@ link_files "$NVIM_SRC" "$NVIM_DST"
 
 RC_SRC="$REPO_DIR/.rc_files/.*"
 RC_DST="$HOME"
+check_src_files
 link_files "$RC_SRC" "$RC_DST"
-
