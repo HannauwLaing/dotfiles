@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+git clone --recurse-submodules https://github.com/HannauwLaing/dotfiles.git
+
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-cp .source_files/Hannauwstheme.zsh-theme .oh-my-zsh/custom/themes
+cp ~/dotfiles/.source_files/Hannauwstheme.zsh-theme ~/dotfiles/.oh-my-zsh/custom/themes
 
 backup() {
   local path="$1"
