@@ -47,7 +47,6 @@ alias c="clear"
 
 # alias oneko="$DOT_FOLDER_DIR/oneko 0<&- >/dev/null 2>&1 & disown ;"
 alias oneko="make -C ~/FunCodes/oneko/ all 0<&- >/dev/null 2>&1 & disown ;"
-a
 # alias killcat="pkill java_neko;c; echo \"Cats have been purged\""
 alias killcat="pkill -f \"^java -cp bin NekoMain$\";clear; echo \"Cats have been purged\""
 alias kc="killcat"
