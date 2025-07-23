@@ -163,6 +163,15 @@ echo "$CYAN Prfx + <Num> $NC              Go to Window                    $NC"
 
 }
 
+extrahelp() {
+echo "\n$BOLD_GREEN~~~~~~~~~~~~~ Extra help ~~~~~~~~~~~~~$NC\n"
+echo "\n$GREEN*** Startup and Reload ***$NC\n"
+echo "$CYAN oneko: $NC            Summons Cat                        $NC"
+echo "$CYAN Prfx + Cntr-s $NC             Save setup                      $NC"
+echo "\n$GREEN*** Windows ***$NC\n"
+
+}
+
 
 i=1;
 if [ "$#" -eq 0 ]; then
@@ -183,6 +192,9 @@ do
 	fi
 	if [ "$a" = "terminal" ]; then
 		terminalhelp | less
+	fi
+	if [ "$a" = "exstra" ]; then
+		extrahelp | less
 	fi
 done
 

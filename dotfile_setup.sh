@@ -72,7 +72,7 @@ get_tmux_plugins() {
   | awk -F"'" '{print $2}' \
   | while read repo; do
       name=$(basename "$repo")
-      git clone "https://github.com/tmux-plugins/$repo.git" "$HOME/.tmux/plugins/$name"
+      git clone "https://github.com/$repo.git" "$HOME/.tmux/plugins/$name"
     done
 }
 mkdir -p "$TMUX_DST"
