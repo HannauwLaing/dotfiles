@@ -29,7 +29,7 @@ zstyle ':omz:update' mode auto
 alias zconfig="nvim $DOT_FOLDER_DIR/.rc_files/.zshrc"
 alias hconfig="nvim $DOT_FOLDER_DIR/.source_files/helpcodes.sh"
 alias tconfig="nvim $DOT_FOLDER_DIR/.rc_files/.tmux.conf"
-alias nconfig="nvim $DOT_FOLDER_DIR/.nvim_dotfiles/init.lua"
+alias nconfig="nvim $DOT_FOLDER_DIR/.nvim_config/nvim/init.lua"
 #open tmux with old session
 alias tx="if [[ -z $(tmux ls) ]]; then tmux; else tmux a; fi"
 alias help="$DOT_FOLDER_DIR/.source_files/helpcodes.sh"
