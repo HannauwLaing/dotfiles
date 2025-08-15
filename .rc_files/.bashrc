@@ -15,3 +15,5 @@ exit
 # $DOT_FOLDER_DIR/zsh
 # exit
 
+
+. "$HOME/.local/bin/env"

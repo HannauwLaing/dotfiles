@@ -16,15 +16,8 @@ source $ZSH/oh-my-zsh.sh
 
 zstyle ':omz:update' mode auto
 
+ZSH_TMUX_AUTOSTART=true
 
-#
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
 
 alias zconfig="nvim $DOT_FOLDER_DIR/.rc_files/.zshrc"
 alias hconfig="nvim $DOT_FOLDER_DIR/.source_files/helpcodes.sh"
@@ -48,11 +41,12 @@ alias c="clear"
 # alias oneko="$DOT_FOLDER_DIR/oneko 0<&- >/dev/null 2>&1 & disown ;"
 alias oneko="make -C ~/FunCodes/oneko/ all 0<&- >/dev/null 2>&1 & disown ;"
 # alias killcat="pkill java_neko;c; echo \"Cats have been purged\""
-alias killcat="pkill -f \"^java -cp bin NekoMain$\";clear; echo \"Cats have been purged\""
+alias killcat="pkill -f \"^java -cp bin NekoMain$\"; echo \"Cats have been purged\""
 alias kc="killcat"
 alias kcc="kc;c"
 alias endlesskat="while true; do oneko; sleep 0.5; done;"
-alias manykats="for i in {1..45}; do oneko; sleep 2; done;"
+alias manykats="for i in {1..22}; do oneko; sleep 4; done;"
+alias fewkats="for i in {1..11}; do oneko; sleep 8; done;"
 
 
 alias funcode="cd ~/Onstartup/FunCode/;java FunWallPaper;cd;"
@@ -81,8 +75,10 @@ bindkey \^K kill-line
 
 tmux() {
   if [ $# -eq 0 ]; then
+	echo "Launching tmux, please wait"
     command tmux attach || command tmux
   else
+	echo "Launching tmux, please wait"
     command tmux "$@"
   fi
 }
@@ -111,3 +107,5 @@ function rejbg() {
   mv "$cur" "$HOME/Onstartup/backgrounds/Rejected wallpapers/"
   cbg
 }
+
+. "$HOME/.local/bin/env"
