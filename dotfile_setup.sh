@@ -27,7 +27,7 @@ backup() {
   mkdir -p "$(dirname "$2")"
 }
 check_src_files() {
-# This is done manually cause I cant be bothereda
+# This is done manually cause I cant be bothered
 
   files=( "$HOME/.bashrc" "$HOME/.zshrc" "$HOME/.tmux.conf" )
 
@@ -79,3 +79,17 @@ mkdir -p "$TMUX_DST"
 get_tmux_plugins
 # backup "$TMUX_DST"
 # link_files "$TMUX_SRC" "$TMUX_DST"
+
+
+BG_SRC="$REPO_DIR/.background_files"
+./$BG_SRC/DownloadAllImages.sh
+# BG_DST="$HOME/.background"
+# mkdir -p "$BG_DST"
+# link_files "$BG_SRC" "$BG_DST"
+
+
+
+
+
+
+

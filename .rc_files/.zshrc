@@ -11,12 +11,13 @@ export ZSH="$DOT_FOLDER_DIR/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="Hannauwstheme"
+export ZSH_TMUX_AUTOSTART=true
+export ZSH_TMUX_AUTOCONNECT=true
 
 source $ZSH/oh-my-zsh.sh
 
 zstyle ':omz:update' mode auto
 
-ZSH_TMUX_AUTOSTART=true
 
 
 alias zconfig="nvim $DOT_FOLDER_DIR/.rc_files/.zshrc"
@@ -44,7 +45,7 @@ alias oneko="make -C ~/FunCodes/oneko/ all 0<&- >/dev/null 2>&1 & disown ;"
 alias killcat="pkill -f \"^java -cp bin NekoMain$\"; echo \"Cats have been purged\""
 alias kc="killcat"
 alias kcc="kc;c"
-alias endlesskat="while true; do oneko; sleep 0.5; done;"
+alias endlesskat="while true; do oneko; sleep 2; done;"
 alias manykats="for i in {1..22}; do oneko; sleep 4; done;"
 alias fewkats="for i in {1..11}; do oneko; sleep 8; done;"
 
@@ -104,7 +105,8 @@ function rejbg() {
   cur=$(gsettings get org.gnome.desktop.background picture-uri-dark \
         | sed -e "s/^'file:\/\///" -e "s/'$//")
   # move it into your “Rejected backgrounds” directory
-  mv "$cur" "$HOME/Onstartup/backgrounds/Rejected wallpapers/"
+  mv "$cur" "$HOME/Onstartup/backgrounds/RejectedWallpapers/"
+  echo "Moved $cur to rejected backgrounds"
   cbg
 }
 
