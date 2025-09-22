@@ -1,5 +1,6 @@
 
 
+SRC=$(pwd)
 
 #currently only doing fonts
 FONT_NAME_DISPLAY="FiraCode Nerd Font Mono"
@@ -8,9 +9,8 @@ FONT_POINT_SIZE="12"
 
 
 # --- Clone repo (shallow) ---
-TMP_DIR="${HOME}/.nerd-fonts-tmp"
+TMP_DIR="${SRC}/.nerd-fonts-tmp"
 echo "[1/4] Cloning Nerd Fonts repo (shallow) to: ${TMP_DIR}"
-rm -rf "${TMP_DIR}"
 TMP_DIR="$(mktemp -d)"
 ZIP_PATH="${TMP_DIR}/FiraCode.zip"
 curl -fL "${FONT_DL_URL}" -o "${ZIP_PATH}"

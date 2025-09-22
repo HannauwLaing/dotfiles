@@ -15,7 +15,7 @@ make_bin:
 setup_rc_files:
 	cp $(SRC)/.setup_files/dotfile_setup.sh $(SRC)/
 	$(SRC)/dotfile_setup.sh
-	rm dotfiles_setup.sh
+	rm dotfile_setup.sh
 
 setup_neovim: make_bin
 	cp $(SRC)/.setup_files/setup_neovim.sh $(BIN)
