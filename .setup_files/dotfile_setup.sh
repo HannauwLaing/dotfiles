@@ -81,8 +81,8 @@ get_tmux_plugins
 # link_files "$TMUX_SRC" "$TMUX_DST"
 
 
-BG_SRC="$REPO_DIR/.background_files"
-./$BG_SRC/DownloadAllImages.sh
+# BG_SRC="$REPO_DIR/.background_files"
+# ./$BG_SRC/DownloadAllImages.sh
 # BG_DST="$HOME/.background"
 # mkdir -p "$BG_DST"
 # link_files "$BG_SRC" "$BG_DST"
