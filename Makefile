@@ -13,8 +13,8 @@ make_bin:
 	mkdir -p $(BIN)
 
 setup_rc_files:
-	cp $(SRC)/.setup_files/dotfiles_setup.sh $(SRC)/
-	$(SRC)/.setup_files/dotfile_setup.sh
+	cp $(SRC)/.setup_files/dotfile_setup.sh $(SRC)/
+	$(SRC)/dotfile_setup.sh
 	rm dotfiles_setup.sh
 
 setup_neovim: make_bin
