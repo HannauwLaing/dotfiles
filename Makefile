@@ -21,5 +21,9 @@ setup_neovim: make_bin
 	cp $(SRC)/.setup_files/setup_neovim.sh $(BIN)
 	cd $(BIN); $(BIN)/setup_neovim.sh
 	
+	
 setup_zsh: make_bin
-	echo "Setup automatic oh-my-zsh config"
+	echo "Setup automatic oh-my-zsh source install and config"
+	# Only do font setup here
+	cp $(SRC)/.setup_files/setup_zsh.sh $(BIN)
+	cd $(BIN); $(BIN)/setup_zsh.sh

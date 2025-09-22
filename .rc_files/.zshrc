@@ -1,6 +1,6 @@
 export DOT_FOLDER_DIR=$HOME/dotfiles
 
-# If you come kkfrom bash you might have to change your $PATH.
+# If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -20,7 +20,7 @@ source $ZSH/oh-my-zsh.sh
 
 zstyle ':omz:update' mode auto
 
-
+alias nvim="$DOT_FOLDER_DIR/bin/neovim_build/bin/nvim"
 
 alias zconfig="nvim $DOT_FOLDER_DIR/.rc_files/.zshrc"
 alias hconfig="nvim $DOT_FOLDER_DIR/.source_files/helpcodes.sh"
