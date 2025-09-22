@@ -3,6 +3,7 @@
 SRC=$(pwd)
 
 #currently only doing fonts
+FONT_DL_URL="https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip"
 FONT_NAME_DISPLAY="FiraCode Nerd Font Mono"
 FONT_POINT_SIZE="12"
 
