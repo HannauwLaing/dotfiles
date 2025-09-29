@@ -80,7 +80,7 @@ get_tmux_plugins
 # backup "$TMUX_DST"
 # link_files "$TMUX_SRC" "$TMUX_DST"
 
-
+# DO this in its own file
 # BG_SRC="$REPO_DIR/.background_files"
 # ./$BG_SRC/DownloadAllImages.sh
 # BG_DST="$HOME/.background"
