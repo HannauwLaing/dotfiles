@@ -2,6 +2,8 @@ SRC = $(PWD)
 BIN = $(SRC)/bin
 
 
+usage:
+	echo "Usage: \"make all\" "
 
 all: clean setup_zsh setup_neovim setup_rc_files 
 	echo "Setup Complete"
