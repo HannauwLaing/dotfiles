@@ -16,13 +16,17 @@ _make_bin:
 	mkdir -p $(BIN)
 
 setup_rc:
-	cp $(SRC)/.setup_files/dotfile_setup.sh $(SRC)/
+	cp $(SRC)/.setup_files/dotfile_setup.sh $(SRC)/; \
+	chmod +x $(SRC)/dotfile_setup.sh ; \
 	$(SRC)/dotfile_setup.sh
 	rm dotfile_setup.sh
 
 setup_neovim: _make_bin
-	cp $(SRC)/.setup_files/setup_neovim.sh $(BIN)
-	cd $(BIN); $(BIN)/setup_neovim.sh
+	cp $(SRC)/.setup_files/setup_neovim.sh $(BIN)/setup_neovim.sh ; \
+	
+	ln -sfn $(SRC)/.nvim_config/nvim ~/.config/nvim; \
+	chmod +x $(BIN)/setup_neovim.sh; \
+	$(BIN)/setup_neovim.sh;
 	
 	
 setup_zsh: _make_bin
@@ -32,4 +36,6 @@ setup_zsh: _make_bin
 	cd $(BIN); $(BIN)/setup_zsh.sh
 
 setup_background_changer: _make_bin
-	cp $(SRC)/.setup_files/setup_zsh.sh $(BIN)
+	cp $(SRC)/.setup_files/setup_zsh.sh $(BIN); \
+	chmod +x $(BIN)/setup_background_changer.sh; \
+	$(BIN)/setup_background_changer.sh
