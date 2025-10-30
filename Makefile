@@ -3,10 +3,11 @@ BIN = $(SRC)/bin
 
 
 usage:
-	echo "Usage: make <all,clean,setup_rc,setup_zsh,setup_neovim> "
+	@echo "";
+	@echo "Usage: make <all,clean,setup_rc,setup_zsh,setup_neovim> ";
 
 all: clean setup_zsh setup_neovim setup_rc
-	echo "Setup Complete"
+	@echo "Setup Complete"
 
 clean:
 	rm -rf $(BIN)
