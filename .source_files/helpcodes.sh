@@ -82,6 +82,35 @@ echo "$CYAN man <command>			$NC displays manual for <command>"
 
 vimhelp() {
     echo "\n$BOLD_GREEN~~~~~~~~~~~~~ Vim help ~~~~~~~~~~~~~$NC\n"
+
+    # echo "\n$GREEN*** <> ***$NC\n"
+    # echo "$CYAN <>$NC			|<>$NC"
+    
+
+
+    echo "\n$GREEN*** Movement ***$NC\n"
+    echo "$CYAN hjkl$NC			|Left, Up, Down, Right$NC"
+    echo "$CYAN<C> + hjkl$NC		|Move Screen Left, Up, Down, Right$NC"
+    echo "$CYAN<num>gg$NC			|Go to line <number>$NC"
+    echo "$CYAN 0 $NC/$CYAN $ $NC			|Start/End of line$NC"
+    echo "$CYAN^$NC			|First Non-blank character of line$NC"
+    echo "$CYAN gg $NC/$CYAN G$NC			|Start/End of file$NC"
+    echo "$CYAN gd$NC			|Go-to definition$NC"
+    echo "$CYAN[[ / ]]$NC			|Start/End of function$NC"
+
+    echo "$CYAN :TodoTelescope$NC			|Opens up menu of all todos and notes ect$NC"
+
+    echo "\n$GREEN*** Marks ***$NC\n"
+    echo "$CYAN\`0$NC			|In last edited file$NC"
+    echo "$CYAN\`\`$NC			|Jump to previous position before jump$NC"
+    echo "$CYAN\`[$NC / $CYAN\`]$NC			|Jump to start/end of section changed or yanked$NC"
+    echo "$CYAN m<key>$NC			|Create mark called <key>$NC"
+    echo "$CYAN'<key>$NC			|Jump to mark called <key>$NC"
+    echo "$CYAN:marks$NC			|Shows all marks$NC"
+    echo "$CYAN:delm <key>$NC		|Deletes mark <key>$NC"
+    #echo ""
+
+
     echo "\n$GREEN*** Normal mode ***$NC\n"
     echo "$CYAN <space> o	           $NC|Opens NeoClip registers in telescope"
     echo "$CYAN	NeoClip: <Enter>   $NC|Adds selected entry to current register"
@@ -114,25 +143,6 @@ vimhelp() {
     echo "$CYAN gc$NC			|Toggle Comments on highlighted lines"
 
 
-    echo "\n$GREEN*** Movement ***$NC\n"
-    echo "$CYAN hjkl$NC			|Left, Up, Down, Right$NC"
-    echo "$CYAN<C> + hjkl$NC		|Move Screen Left, Up, Down, Right$NC"
-    echo "$CYAN<num>gg$NC			|Go to line <number>$NC"
-    echo "$CYAN 0 $NC/$CYAN $ $NC			|Start/End of line$NC"
-    echo "$CYAN^$NC			|First Non-blank character of line$NC"
-    echo "$CYAN gg $NC/$CYAN G$NC			|Start/End of file$NC"
-    echo "$CYAN gd$NC			|Go-to definition$NC"
-    echo "$CYAN[[ / ]]$NC			|Start/End of function$NC"
-
-    echo "\n$GREEN*** Marks ***$NC\n"
-    echo "$CYAN\`0$NC			|In last edited file$NC"
-    echo "$CYAN\`\`$NC			|Jump to previous position before jump$NC"
-    echo "$CYAN\`[$NC / $CYAN\`]$NC			|Jump to start/end of section changed or yanked$NC"
-    echo "$CYAN m<key>$NC			|Create mark called <key>$NC"
-    echo "$CYAN'<key>$NC			|Jump to mark called <key>$NC"
-    echo "$CYAN:marks$NC			|Shows all marks$NC"
-    echo "$CYAN:delm <key>$NC		|Deletes mark <key>$NC"
-    #echo ""
 
 
 }

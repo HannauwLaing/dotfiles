@@ -1,23 +1,54 @@
 
+NVM_HOME_CONFIG_FOLDER=~/.config/nvim
+NVM_SRC=$(pwd)/bin/nvim_setup
 
-NVM_SRC=$(pwd)
-NVM_BUILD=$NVM_SRC/neovim_build
-NVM_CONFIG=$NVM_SRC/bin/.nvim_config/nvim
-mkdir -p $NVM_BUILD
-echo "Looking to clone now $NVM_CONFIG"
-if [[ ":$PATH:" =~ ":$NVM_BUILD/bin:" ]]; then
-    echo "No need to export"
+
+
+
+
+
+NVM_CLONE_FOLDER=$NVM_SRC/repo
+NVM_BUILD=$NVM_SRC/build
+NVM_CONFIG=$NVM_SRC/config/nvim
+NVM_REPO="https://github.com/neovim/neovim.git"
+NVM_CONFIG_REPO="https://github.com/HannauwLaing/kickstart.nvim.git"
+
+cd $NVM_SRC;
+echo "[NEOVIM] Now cloning $NVM_REPO";
+
+if [[ -d "$NVM_CLONE_FOLDER" ]]; then
+    echo "[NEOVIM] Repo already exsists";
 else
-    echo "Exporting bin now"
-	git clone https://github.com/neovim/neovim.git
-	cd neovim
+    echo "[NEOVIM] Start Cloning";
+	git clone $NVM_REPO $NVM_CLONE_FOLDER > /dev/null 2>&1
+	cd $NVM_CLONE_FOLDER;
 
 
-	make CMAKE_BUILD_TYPE=RelWithDebInfo 
-	make CMAKE_INSTALL_PREFIX=$NVM_BUILD install
-	export PATH="$NVM_BUILD/bin:$PATH"
+	make CMAKE_BUILD_TYPE=RelWithDebInfo > /dev/null 2>&1
+	make CMAKE_INSTALL_PREFIX=$NVM_BUILD install > /dev/null 2>&1
 	
-	# ln -sf $NVM_CONFIG ~/.config/nvim
+fi
+cd $NVM_SRC;
+echo "[NEOVIM] Setting up Configrations";
+
+
+if [[ -d "$NVM_CONFIG" ]]; then
+    echo "[NEOVIM] Config already exsists";
+else
+	echo "[NEOVIM] Start Cloning Config";
+	git clone $NVM_CONFIG_REPO $NVM_CONFIG > /dev/null 2>&1
+	ln -sfn $NVM_CONFIG $NVM_HOME_CONFIG_FOLDER;
 fi
 
+if [[ ":$PATH:" =~ ":$NVM_BUILD/bin:" ]]; then
+    echo "[NEOVIM] Export already contains bin"
+else
+    echo "[NEOVIM] Exporting bin/ to path now"
+	export PATH="$NVM_BUILD/bin:$PATH"
+	echo "[NEOVIM] New <PATH>: $PATH"
+fi
+echo "[NEOVIM] Now removing cloned repo";
+rm -rf $NVM_CLONE_FOLDER;
+
+echo "[NEOVIM] Finished setting up Neovim";
 
