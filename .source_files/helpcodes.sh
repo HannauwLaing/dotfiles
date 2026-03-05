@@ -35,6 +35,10 @@ echo "$BOLD_GREEN ~~~~~~~~~~Exra help~~~~~~~~~$NC"
 echo "$CYAN terminal		$NC : terminal help"
 echo "$CYAN vim/nvim		$NC : vim help"
 echo "$CYAN tmux			$NC : tmux help"
+
+echo ""
+echo "$BOLD_GREEN ~~~~~~~~~~Navigation~~~~~~~~~$NC"
+echo "$CYAN modfuncitonal		$NC : Funcitonal Programing 795"
 }
 
 echo "$CYAN			$NC "

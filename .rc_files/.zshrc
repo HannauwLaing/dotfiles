@@ -11,12 +11,17 @@ export DOT_FOLDER_DIR=$HOME/dotfiles
 # Path to your oh-my-zsh installation.
 export ZSH="$DOT_FOLDER_DIR/.oh-my-zsh"
 
+
+# Enable auto update
+DISABLE_UPDATE_PROMPT=true
+export UPDATE_ZSH_DAYS=1
+
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="Hannauwstheme"
-
 plugins=(tmux)
 export ZSH_TMUX_AUTOSTART=true
 export ZSH_TMUX_AUTOCONNECT=true
@@ -24,6 +29,11 @@ export ZSH_TMUX_AUTOCONNECT=true
 source $ZSH/oh-my-zsh.sh
 
 zstyle ':omz:update' mode auto
+
+# nvim debug fix:
+export NVIM_LOG_FILE=/dev/null
+
+
 
 # Terminal commands:
 
@@ -41,7 +51,12 @@ alias c="clear"
 # alias nvim="$DOT_FOLDER_DIR/bin/neovim_build/bin/nvim"
 alias nvim="$DOT_FOLDER_DIR/bin/nvim_setup/build/bin/nvim"
 
-
+# Navigation:
+alias gotoMain="cd ~/StelenboshYear4/"
+alias gotoProj="cd ~/StelenboshYear4/HonoursProject"
+alias gotoFunc="cd ~/StelenboshYear4/FunctionalPrograming795"
+alias gotoAlgos="cd ~/StelenboshYear4/AdvancedAlgorithms712"
+alias gotoVunr="cd ~/StelenboshYear4/VunrebilatyAndSecurity716"
 
 
 # Edit config file commands
@@ -77,10 +92,10 @@ alias kcc="kc;c"
 alias endlesskat="while true; do oneko; sleep 2; done;"
 alias manykats="for i in {1..22}; do oneko; sleep 4; done;"
 alias fewkats="for i in {1..11}; do oneko; sleep 8; done;"
-
+alias nyancat="~/FunCodes/nyancat/bin/nyancat"
 
 alias funcode="cd ~/Onstartup/FunCode/;java FunWallPaper;cd;"
-alias cmatrix="$DOT_FOLDER_DIR/cmatrix"
+alias cmatrix="$DOT_FOLDER_DIR/.source_files/cmatrix"
 alias hackerman="cmatrix -b"
 
 
@@ -136,3 +151,5 @@ function rejbg() {
 }
 
 . "$HOME/.local/bin/env"
+
+[ -f "/home/hannauw/.ghcup/env" ] && . "/home/hannauw/.ghcup/env" # ghcup-env

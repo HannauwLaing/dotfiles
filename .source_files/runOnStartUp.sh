@@ -8,18 +8,18 @@ sleep 1
 
 # This is to make cat
 make -C ~/FunCodes/oneko/ all 0<&- >/dev/null 2>&1 & disown &
-sleep 0.1
+sleep 1
 
-# opens terminal
+# opens file explorer
 nautilus &
 sleep 1
 
+# opens terminal
 gnome-terminal &
-sleep 1
-# ~/backgrounds/change-background.sh &
+sleep 3
 
 firefox &
-sleep 1
+sleep 3
 
 # cd &
 # exit

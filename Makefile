@@ -33,9 +33,9 @@ setup_rc:
 setup_neovim: _make_bin
 	echo "Seting up neovim"
 	ln -sfn $(SRC)/.setup_files/setup_neovim.sh $(BIN)/setup_neovim.sh ; \
-	# ln -sfn $(SRC)/.nvim_config/nvim ~/.config/nvim; \
+	ln -sfn $(SRC)/.nvim_config/nvim ~/.config/nvim; \
 	chmod +x $(BIN)/setup_neovim.sh; \
-	$(BIN)/setup_neovim.sh;
+	$(BIN)/setup_neovim.sh; \
 	
 	
 setup_zsh: _make_bin

@@ -17,3 +17,4 @@ exit
 
 
 . "$HOME/.local/bin/env"
+. "$HOME/.cargo/env"
