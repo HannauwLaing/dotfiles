@@ -11,7 +11,6 @@ export DOT_FOLDER_DIR=$HOME/dotfiles
 # Path to your oh-my-zsh installation.
 export ZSH="$DOT_FOLDER_DIR/.oh-my-zsh"
 
-
 # Enable auto update
 DISABLE_UPDATE_PROMPT=true
 export UPDATE_ZSH_DAYS=1
@@ -92,6 +91,7 @@ alias kcc="kc;c"
 alias endlesskat="while true; do oneko; sleep 2; done;"
 alias manykats="for i in {1..22}; do oneko; sleep 4; done;"
 alias fewkats="for i in {1..11}; do oneko; sleep 8; done;"
+
 alias nyancat="~/FunCodes/nyancat/bin/nyancat"
 
 alias funcode="cd ~/Onstartup/FunCode/;java FunWallPaper;cd;"
@@ -152,4 +152,5 @@ function rejbg() {
 
 . "$HOME/.local/bin/env"
 
+# This is a haskell thing I think
 [ -f "/home/hannauw/.ghcup/env" ] && . "/home/hannauw/.ghcup/env" # ghcup-env
