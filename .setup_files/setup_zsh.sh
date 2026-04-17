@@ -16,7 +16,7 @@ SRC=$(pwd)
 
 
 
-
+sudo apt install -y zsh
 
 # NOTE: currently only doing fonts
 FONT_DL_URL="https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip"
@@ -47,6 +47,7 @@ fc-cache -fv >/dev/null
 
 
 echo "[4/4] Setting GNOME Terminal font to '${FONT_NAME_DISPLAY} ${FONT_POINT_SIZE}'..."
+
 if command -v gsettings >/dev/null 2>&1 && gsettings list-schemas | grep -q "org.gnome.Terminal.ProfilesList"; then
   PROFILE_ID_RAW="$(gsettings get org.gnome.Terminal.ProfilesList default || true)"
   if [[ -n "${PROFILE_ID_RAW}" && "${PROFILE_ID_RAW}" != "@as []" ]]; then
