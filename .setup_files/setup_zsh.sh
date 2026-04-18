@@ -30,8 +30,8 @@ TMP_DIR="${SRC}/.nerd-fonts-tmp"
 echo "[1/4] Cloning Nerd Fonts repo (shallow) to: ${TMP_DIR}"
 TMP_DIR="$(mktemp -d)"
 ZIP_PATH="${TMP_DIR}/FiraCode.zip"
-curl -fL "${FONT_DL_URL}" -o "${ZIP_PATH}"
 
+curl -LO "${FONT_DL_URL}" -o "${ZIP_PATH}"
 
 echo "[2/4] Installing to ~/.local/share/fonts ..."
 FONT_DIR="${HOME}/.local/share/fonts"
@@ -50,7 +50,7 @@ echo "[4/4] Setting GNOME Terminal font to '${FONT_NAME_DISPLAY} ${FONT_POINT_SI
 
 if command -v gsettings >/dev/null 2>&1 && gsettings list-schemas | grep -q "org.gnome.Terminal.ProfilesList"; then
   PROFILE_ID_RAW="$(gsettings get org.gnome.Terminal.ProfilesList default || true)"
-  if [[ -n "${PROFILE_ID_RAW}" && "${PROFILE_ID_RAW}" != "@as []" ]]; then
+  if  -n "${PROFILE_ID_RAW}" && "${PROFILE_ID_RAW}" != "@as []"; then
     PROFILE_ID="$(echo "${PROFILE_ID_RAW}" | tr -d "'")"
     PROFILE_PATH="org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${PROFILE_ID}/"
 
