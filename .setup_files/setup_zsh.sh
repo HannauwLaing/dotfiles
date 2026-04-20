@@ -17,6 +17,7 @@ SRC=$(pwd)
 
 
 sudo apt install -y zsh
+sudo apt install -y curl
 
 # NOTE: currently only doing fonts
 FONT_DL_URL="https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip"
