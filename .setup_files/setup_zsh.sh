@@ -2,20 +2,6 @@
 
 SRC=$(pwd)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 sudo apt install -y zsh
 sudo apt install -y curl
 
@@ -28,8 +14,9 @@ FONT_POINT_SIZE="12"
 
 # --- Clone repo (shallow) ---
 TMP_DIR="${SRC}/.nerd-fonts-tmp"
+mkdir -p "$TMP_DIR"
 echo "[1/4] Cloning Nerd Fonts repo (shallow) to: ${TMP_DIR}"
-TMP_DIR="$(mktemp -d)"
+# TMP_DIR="$(mktemp -d)"
 ZIP_PATH="${TMP_DIR}/FiraCode.zip"
 
 curl -LO "${FONT_DL_URL}" -o "${ZIP_PATH}"

@@ -15,8 +15,11 @@ usage:
 	@echo "";
 	@echo "Usage: make <all,clean,setup_rc,setup_zsh,setup_neovim> ";
 
-all: clean setup_zsh setup_neovim setup_rc
+all: clean default setup_zsh setup_neovim setup_rc
 	@echo "Setup Complete"
+
+defaut:
+	sudo apt-get update
 
 clean:
 	rm -rf $(BIN)
@@ -24,13 +27,13 @@ clean:
 _make_bin:
 	mkdir -p $(BIN)
 
-setup_rc:
+setup_rc: default 
 	cp $(SRC)/.setup_files/dotfile_setup.sh $(SRC)/; \
 	chmod +x $(SRC)/dotfile_setup.sh ; \
 	$(SRC)/dotfile_setup.sh
 	rm $(SRC)/dotfile_setup.sh
 
-setup_neovim: _make_bin
+setup_neovim: _make_bin default 
 	echo "Installing dependents"
 	sudo apt install -y cmake
 	echo "Seting up neovim"
@@ -40,13 +43,15 @@ setup_neovim: _make_bin
 	$(BIN)/setup_neovim.sh; \
 	
 	
-setup_zsh: _make_bin
+setup_zsh: _make_bin default 
 	echo "TODO Setup automatic oh-my-zsh source install and config"
+	sudo apt install -y zsh
+	sudo apt install -y curl
 	# Only do font setup here
 	cp $(SRC)/.setup_files/setup_zsh.sh $(BIN)
 	cd $(BIN); $(BIN)/setup_zsh.sh
 
-setup_background_changer: _make_bin
+setup_background_changer: _make_bin default 
 	cp $(SRC)/.setup_files/setup_background_changer.sh $(BIN); \
 	chmod +x $(BIN)/setup_background_changer.sh; \
 	$(BIN)/setup_background_changer.sh
