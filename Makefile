@@ -18,7 +18,7 @@ usage:
 all: clean default setup_zsh setup_neovim setup_rc
 	@echo "Setup Complete"
 
-defaut:
+default:
 	sudo apt-get update
 
 clean:
@@ -28,7 +28,7 @@ _make_bin:
 	mkdir -p $(BIN)
 
 setup_rc: default 
-	cp $(SRC)/.setup_files/dotfile_setup.sh $(SRC)/; \
+	ln -sfn $(SRC)/.setup_files/dotfile_setup.sh $(SRC)/; \
 	chmod +x $(SRC)/dotfile_setup.sh ; \
 	$(SRC)/dotfile_setup.sh
 	rm $(SRC)/dotfile_setup.sh
@@ -48,10 +48,12 @@ setup_zsh: _make_bin default
 	sudo apt install -y zsh
 	sudo apt install -y curl
 	# Only do font setup here
-	cp $(SRC)/.setup_files/setup_zsh.sh $(BIN)
+	ln -sfn $(SRC)/.setup_files/setup_zsh.sh $(BIN)
+	ln -sfn $(SRC)/.source_files/env $(BIN)
+
 	cd $(BIN); $(BIN)/setup_zsh.sh
 
 setup_background_changer: _make_bin default 
-	cp $(SRC)/.setup_files/setup_background_changer.sh $(BIN); \
+	ln -sfn $(SRC)/.setup_files/setup_background_changer.sh $(BIN); \
 	chmod +x $(BIN)/setup_background_changer.sh; \
 	$(BIN)/setup_background_changer.sh

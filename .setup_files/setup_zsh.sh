@@ -5,11 +5,20 @@ SRC=$(pwd)
 sudo apt install -y zsh
 sudo apt install -y curl
 
+
+# TODO:
+# move env file in .source_files to .local/bin/
+
+ENV_DIR="${HOME}/.local/bin/"
+mkdir -p "$ENV_DIR"
+ln -sfn "$SRC" "$ENV_DIR"
+
+
+
 # NOTE: currently only doing fonts
 FONT_DL_URL="https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip"
 FONT_NAME_DISPLAY="FiraCode Nerd Font Mono"
 FONT_POINT_SIZE="12"
-
 
 
 # --- Clone repo (shallow) ---
@@ -19,7 +28,7 @@ echo "[1/4] Cloning Nerd Fonts repo (shallow) to: ${TMP_DIR}"
 # TMP_DIR="$(mktemp -d)"
 ZIP_PATH="${TMP_DIR}/FiraCode.zip"
 
-curl -LO "${FONT_DL_URL}" -o "${ZIP_PATH}"
+curl -LO "${FONT_DL_URL}"
 
 echo "[2/4] Installing to ~/.local/share/fonts ..."
 FONT_DIR="${HOME}/.local/share/fonts"
