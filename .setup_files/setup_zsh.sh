@@ -29,6 +29,7 @@ echo "[1/4] Cloning Nerd Fonts repo (shallow) to: ${TMP_DIR}"
 ZIP_PATH="${TMP_DIR}/FiraCode.zip"
 
 curl -LO "${FONT_DL_URL}"
+mv "$SRC/FiraCode.zip" "$ZIP_PATH"
 
 echo "[2/4] Installing to ~/.local/share/fonts ..."
 FONT_DIR="${HOME}/.local/share/fonts"
