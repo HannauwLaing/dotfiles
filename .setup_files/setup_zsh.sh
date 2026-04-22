@@ -11,7 +11,7 @@ sudo apt install -y curl
 
 ENV_DIR="${HOME}/.local/bin/"
 mkdir -p "$ENV_DIR"
-ln -sfn "$SRC" "$ENV_DIR"
+ln -sfn "$SRC/env" "$ENV_DIR/env"
 
 
 
