@@ -3,6 +3,9 @@ NVM_HOME_CONFIG_FOLDER=~/.config/nvim
 NVM_SRC=$(pwd)/bin/nvim_setup
 
 
+# sudo apt install -y ghcup
+sudo apt install -y npm
+
 
 
 NVM_CLONE_FOLDER=$NVM_SRC/repo

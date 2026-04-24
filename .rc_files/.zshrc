@@ -65,11 +65,11 @@ alias tconfig="nvim $DOT_FOLDER_DIR/.rc_files/.tmux.conf"
 alias nconfig="nvim $DOT_FOLDER_DIR/.nvim_config/nvim/init.lua"
 
 
+
+# Other
 alias killses="tmux kill-session"
-
-
 alias specs="neofetch"
-
+alias python="python3"
 
 # Git custom commands
 alias gst="git fetch; git status;"
