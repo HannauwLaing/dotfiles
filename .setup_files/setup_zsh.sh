@@ -5,10 +5,27 @@ SRC=$(pwd)
 sudo apt install -y zsh
 sudo apt install -y curl
 
+ln -sfn $SRC/../.source_files/Hannauwstheme.zsh-theme $SRC/../.oh-my-zsh/custom/themes
 
-# TODO:
-# move env file in .source_files to .local/bin/
 
+
+# TMUX setup
+# TODO: make .tmux dir clone to dotfiles/bin/.tmux and not home/.tmux
+# And change .tmux.conf
+
+sudo apt install -y tmux
+get_tmux_plugins() {
+  grep -oE "@plugin +'[^']+'" $SRC/../.rc_files/.tmux.conf \
+  | awk -F"'" '{print $2}' \
+  | while read repo; do
+      name=$(basename "$repo")
+      rm -rf "$HOME/.tmux/plugins/$name"
+      git clone "https://github.com/$repo.git" "$HOME/.tmux/plugins/$name"
+    done
+}
+get_tmux_plugins
+
+# Setup the .env file
 ENV_DIR="${HOME}/.local/bin/"
 mkdir -p "$ENV_DIR"
 ln -sfn "$SRC/env" "$ENV_DIR/env"
