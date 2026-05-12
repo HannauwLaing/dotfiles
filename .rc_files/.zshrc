@@ -83,7 +83,7 @@ alias autogit="git add . ;git commit -m '$1'; git push;"
 
 # Fun commands:
 # alias oneko="$DOT_FOLDER_DIR/oneko 0<&- >/dev/null 2>&1 & disown ;"
-alias oneko="make -C ~/FunCodes/oneko/ all 0<&- >/dev/null 2>&1 & disown ;"
+alias oneko="make -C ~/bin/oneko/ run 0<&- >/dev/null 2>&1 & disown"
 # alias killcat="pkill java_neko;c; echo \"Cats have been purged\""
 alias killcat="pkill -f \"^java -cp bin NekoMain$\"; echo \"Cats have been purged\""
 alias kc="killcat"
@@ -153,4 +153,5 @@ function rejbg() {
 . "$HOME/.local/bin/env"
 
 # This is a haskell thing I think
-[ -f "/home/hannauw/.ghcup/env" ] && . "/home/hannauw/.ghcup/env" # ghcup-env
+
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
