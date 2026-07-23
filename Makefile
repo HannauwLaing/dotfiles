@@ -57,3 +57,22 @@ setup_background_changer: _make_bin default
 	ln -sfn $(SRC)/.setup_files/setup_background_changer.sh $(BIN); \
 	chmod +x $(BIN)/setup_background_changer.sh; \
 	$(BIN)/setup_background_changer.sh
+
+setup_oneko: REPO_URL := https://github.com/HannauwLaing/oneko.git
+setup_oneko: BIN_DIR  := $(shell pwd)/bin
+setup_oneko: REPO_DIR := $(shell pwd)/bin/oneko
+setup_oneko: _make_bin default
+	# REPO_URL := https://github.com/HannauwLaing/oneko.git
+	# BIN_DIR := "$(shell pwd)/bin"
+	# REPO_DIR := "$(BIN_DIR)/oneko"
+	@mkdir -p "$(REPO_DIR)"
+	@if [ ! -d "$(REPO_DIR)/.git" ]; then \
+		echo "[Oneko] Cloning repo -> $(REPO_DIR)"; \
+		git clone --depth=1 "$(REPO_URL)" "$(REPO_DIR)"; \
+		echo "[Oneko] Running make compile"; \
+		$(MAKE) -C "$(REPO_DIR)" compile; \
+		echo "[Oneko] Done."; \
+	else \
+		echo "[Oneko] Already Cloned"; \
+		echo "[Oneko] Done."; \
+	fi
