@@ -90,6 +90,8 @@ vimhelp() {
     # echo "\n$GREEN*** <> ***$NC\n"
     # echo "$CYAN <>$NC			|<>$NC"
     
+    echo "\n$GREEN*** TODO ***$NC\n"
+    echo "$CYAN Add collaps and expand$NC			|<>$NC"
 
 
     echo "\n$GREEN*** Movement ***$NC\n"
@@ -100,9 +102,10 @@ vimhelp() {
     echo "$CYAN^$NC			|First Non-blank character of line$NC"
     echo "$CYAN gg $NC/$CYAN G$NC			|Start/End of file$NC"
     echo "$CYAN gd$NC			|Go-to definition$NC"
-    echo "$CYAN[[ / ]]$NC			|Start/End of function$NC"
+    echo "$CYAN [[ / ]]$NC		|Start/End of function$NC"
 
-    echo "$CYAN :TodoTelescope$NC			|Opens up menu of all todos and notes ect$NC"
+    echo "$CYAN :TodoTelescope$NC		|Opens up menu of all todos and notes ect$NC"
+    echo "$CYAN <space> e$NC OR $CYAN:NeoTree$NC	|Opens an tree for selecting files$NC"
 
     echo "\n$GREEN*** Marks ***$NC\n"
     echo "$CYAN\`0$NC			|In last edited file$NC"

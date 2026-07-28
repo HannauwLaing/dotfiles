@@ -19,7 +19,7 @@ firefox &
 sleep 3
 
 # This is to make cat
-make -C ~/bin/oneko/ all 0<&- >/dev/null 2>&1 & disown &
+make -C ~/bin/oneko/ run 0<&- >/dev/null 2>&1 & disown &
 sleep 1
 
 # cd &
