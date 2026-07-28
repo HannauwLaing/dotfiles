@@ -58,6 +58,8 @@ alias gotoAlgos="cd ~/StelenboshYear4/AdvancedAlgorithms712"
 alias gotoVunr="cd ~/StelenboshYear4/VunrebilatyAndSecurity716"
 
 
+
+
 # Edit config file commands
 alias zconfig="nvim $DOT_FOLDER_DIR/.rc_files/.zshrc"
 alias hconfig="nvim $DOT_FOLDER_DIR/.source_files/helpcodes.sh"
@@ -82,8 +84,9 @@ alias autogit="git add . ;git commit -m '$1'; git push;"
 
 
 # Fun commands:
-# alias oneko="$DOT_FOLDER_DIR/oneko 0<&- >/dev/null 2>&1 & disown ;"
-alias oneko="make -C ~/bin/oneko/ run 0<&- >/dev/null 2>&1 & disown"
+alias oneko="make -C $DOT_FOLDER_DIR/bin/oneko/ run 0<&- >/dev/null 2>&1 & disown;" 
+# cd  0<&- >/dev/null 2>&1 & disown ;"
+# alias oneko="make -C ~/bin/oneko/ run 0<&- >/dev/null 2>&1 & disown"
 # alias killcat="pkill java_neko;c; echo \"Cats have been purged\""
 alias killcat="pkill -f \"^java -cp bin NekoMain$\"; echo \"Cats have been purged\""
 alias kc="killcat"
@@ -100,7 +103,6 @@ alias hackerman="cmatrix -b"
 
 
 # My own costomizations:
-
 alias cbg="~/Onstartup/backgrounds/change-background.sh"
 
 
